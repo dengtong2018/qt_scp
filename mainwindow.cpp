@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <stdlib.h>
 #include <stdio.h>
+#include <QProcess>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -24,13 +25,13 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     //定义文件对话框类
-    QFileDialog *fileDialog = new QFileDialog(this);
-    //定义文件对话框标题
-    fileDialog->setWindowTitle(QStringLiteral("选中文件"));
-    //设置默认文件路径
-    fileDialog->setDirectory(".");
-    //设置文件过滤器
-    fileDialog->setNameFilter(tr("File(*.*)"));
+    QFileDialog *fileDialog = new QFileDialog(this ,"选择文件" ,"~/" ,"All files(*)");
+//    //定义文件对话框标题
+//    fileDialog->setWindowTitle(QStringLiteral("选中文件"));
+//    //设置默认文件路径
+//    fileDialog->setDirectory(".");
+//    //设置文件过滤器
+//    fileDialog->setNameFilter(tr("File(*.*)"));
     //设置可以选择多个文件,默认为只能选择一个文件QFileDialog::ExistingFiles
     fileDialog->setFileMode(QFileDialog::ExistingFiles);
     //设置视图模式
@@ -71,6 +72,7 @@ void MainWindow::on_pushButton_2_clicked()
         ui->textExecResult->insertPlainText("\n");
     }
     qDebug() << recv;
+
 }
 
 int MainWindow::exec_cmd_using_popen(char const* cmd, QStringList& res_vec)
