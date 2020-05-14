@@ -57,7 +57,9 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QWidget *widget_6;
     QVBoxLayout *verticalLayout_5;
+    QHBoxLayout *horizontalLayout_3;
     QPushButton *pushButton;
+    QPushButton *btnClear;
     QTextBrowser *textFileName;
     QWidget *widget_7;
     QVBoxLayout *verticalLayout_6;
@@ -186,10 +188,21 @@ public:
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         pushButton = new QPushButton(widget_6);
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
-        verticalLayout_5->addWidget(pushButton);
+        horizontalLayout_3->addWidget(pushButton);
+
+        btnClear = new QPushButton(widget_6);
+        btnClear->setObjectName(QStringLiteral("btnClear"));
+
+        horizontalLayout_3->addWidget(btnClear);
+
+
+        verticalLayout_5->addLayout(horizontalLayout_3);
 
         textFileName = new QTextBrowser(widget_6);
         textFileName->setObjectName(QStringLiteral("textFileName"));
@@ -252,6 +265,7 @@ public:
         label_3->setText(QApplication::translate("MainWindow", "\345\257\206\347\240\201", 0));
         label_4->setText(QApplication::translate("MainWindow", "\346\213\267\350\264\235\347\233\256\345\275\225", 0));
         pushButton->setText(QApplication::translate("MainWindow", "\351\200\211\346\213\251\346\226\207\344\273\266", 0));
+        btnClear->setText(QApplication::translate("MainWindow", "\346\270\205\351\231\244", 0));
         pushButton_2->setText(QApplication::translate("MainWindow", "\344\270\212\344\274\240", 0));
     } // retranslateUi
 

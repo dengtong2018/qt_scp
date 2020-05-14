@@ -141,11 +141,22 @@
         <widget class="QWidget" name="widget_6" native="true">
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QPushButton" name="pushButton">
-            <property name="text">
-             <string>选择文件</string>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QPushButton" name="pushButton">
+              <property name="text">
+               <string>选择文件</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnClear">
+              <property name="text">
+               <string>清除</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
            <widget class="QTextBrowser" name="textFileName"/>

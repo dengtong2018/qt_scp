@@ -103,3 +103,9 @@ int MainWindow::exec_cmd_using_popen(char const* cmd, QStringList& res_vec)
     return 0;
 }
 
+
+void MainWindow::on_btnClear_clicked()
+{
+    ui->textFileName->clear();
+    fileNames.clear();
+}
